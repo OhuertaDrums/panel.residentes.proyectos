@@ -13,3 +13,9 @@ def base(request):
 def pruebas(request):
 	return render(request, 'paginas/pruebas.html')
 
+
+def login(request):
+	return render(request, 'paginas/login.html')
+
+def registrar(request):
+	return render(request, 'paginas/registrar.html')
