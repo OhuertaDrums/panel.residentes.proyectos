@@ -8,3 +8,5 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse(" Bienvenido al Banco de Proyectos FINKOK")
 
+def base(request):
+   return render (request, 'index.html')
