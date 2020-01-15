@@ -11,20 +11,19 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Panel residentes</title>
-
 {% block css %} 
-
-
-
-
  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
 
  <link href="{% static 'vendor/datatables/dataTables.bootstrap4.css' %}" rel="stylesheet">
 
 <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
 
-
+<!-- INICIO Este codigo es para el datapiker(Calendario) -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  
+  
+<!-- FIN Este codigo es para el datapiker(Calendario) -->
 {% endblock %} 
 
   <title>{% block title %}Panel residentes{% endblock %}</title>
@@ -34,6 +33,7 @@
 
 <body id="page-top">
 
+{% block menu %}
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
     <img src="/static/Images/finkoklogo.png " align="text-center" width="45px", height="45px">
@@ -95,6 +95,8 @@
       </li>
     </ul>
   </nav>
+{% endblock %}
+
 
   <div id="wrapper">
     <!-- Sidebar -->
@@ -146,7 +148,7 @@
           <li class="breadcrumb-item active">Vista General</li>
         </ol>
 
-        {% block table %}
+        {% block content %}
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
@@ -191,30 +193,6 @@
                     <td>2009/01/12</td>
                     <td>$86,000</td>
                   </tr>
-                  <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2012/03/29</td>
-                    <td>$433,060</td>
-                  </tr>
-                  <tr>
-                    <td>Airi Satou</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>33</td>
-                    <td>2008/11/28</td>
-                    <td>$162,700</td>
-                  </tr>
-                  <tr>
-                    <td>Brielle Williamson</td>
-                    <td>Integration Specialist</td>
-                    <td>New York</td>
-                    <td>61</td>
-                    <td>2012/12/02</td>
-                    <td>$372,000</td>
-                  </tr> 
 
                 </tbody>
               </table>
@@ -227,8 +205,6 @@
       </div>
       <!-- /.container-fluid -->
       {% endblock %}
-
-
 
       <!-- Sticky Footer -->
       <footer class="sticky-footer">
@@ -247,7 +223,7 @@
 
   </div>
   <!-- /#wrapper -->
-
+ 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
@@ -293,10 +269,11 @@
  <script src="{% static 'vendor/datatables/dataTables.bootstrap4.js' %}"></script>
 
  <!-- Custom scripts for all pages-->
- <script src="{% static 'js/sb-admin.min.js' %}"></sc ript>
-
- <!-- Demo scripts for this page-->
+ <script src="{% static 'js/sb-admin.min.js' %}"></script>
  <script src="{% static 'js/demo/datatables-demo.js' %}"></script>
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <script src="{% static 'js/calendario.js' %}"></script>
  <!--<script src="js/demo/chart-area-demo.js"></script>-->
 
  {% endblock %}
