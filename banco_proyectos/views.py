@@ -21,3 +21,10 @@ def login(request):
 def registrar(request):
 	return render(request, 'paginas/registrar.html')
 
+
+def calendario(request):
+	return render(request, 'paginas/calendario.html')
+
+def test(request):
+	return render(request, 'paginas/test.html')
+
