@@ -3,16 +3,8 @@ from django.http import HttpResponse
 
 
 
-def index(request):
-    return HttpResponse(" Bienvenido al Banco de Proyectos FINKOK")
-
-def base(request):
-
-   return render (request, 'index.html')
-
-
-def pruebas(request):
-	return render(request, 'paginas/pruebas.html')
+def vistaprincipal(request):
+	return render(request, 'paginas/vistaprincipal.html')
 
 
 def login(request):
@@ -22,8 +14,8 @@ def registrar(request):
 	return render(request, 'paginas/registrar.html')
 
 
-def agendarcita(request):
-	return render(request, 'paginas/agendarcita.html')
+def agendar(request):
+	return render(request, 'paginas/agendar.html')
 
 def residentes(request):
 	return render(request, 'paginas/residentes.html')
