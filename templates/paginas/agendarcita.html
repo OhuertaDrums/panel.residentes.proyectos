@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+  calendario
+{% endblock %}
+
+
+
+{% block content%}
+<!--<p>Date: <input type="text" id="datepicker"></p>-->
+
+
+
+<div class="container">
+  <div class="row">
+      <div class="col" id="datepicker"></div>
+            <div class="col card" style="width: 18rem;">
+              <div class="card-body">
+                  <h3>Datos del residente</h3>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <label>Residente</label>    
+                      <input type="text" name="residente" disabled="disabled"></li>
+                    <li class="list-group-item">
+                      <label>Escuela</label>
+                      <input type="text" name="escuela"></li>
+                    <li class="list-group-item">
+                      <label>Fecha</label>
+                      <input type="text" name="fecha"></li>
+
+                      <form action="../. ./form-result.php" method="post" target="_blank">
+                        <p>
+                        Agendar cita: <input type="date" name="fechacita" list="listafechascita">
+                        <input type="submit" value="Confirmar cita">
+                        </p>
+                      </form>
+                      <datalist id="listafechascita">
+                      <option value="2015-05-05">
+                      <option value="2015-05-12">
+                      <option value="2015-05-19">
+                      <option value="2015-05-26">
+                      </datalist>
+                  </ul>
+            </div>
+      </div>
+   </div>
+</div>
+
+<div id="espacio">
+  <p></p>
+</div>
+
+<div id="contenido">
+  <h4>Nota:<span>El horario para entrevistas es de 11 am a 2 pm de Lunes a Viernes,  por favor comunicate con nosotros para acordar tu horario de cita en el día seleccionado”.</span></h4>
+
+</div>
+{% endblock %}
