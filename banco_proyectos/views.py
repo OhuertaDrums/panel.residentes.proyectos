@@ -28,3 +28,5 @@ def agendarcita(request):
 def residentes(request):
 	return render(request, 'paginas/residentes.html')
 
+def archivosresidente(request):
+	return render(request, 'paginas/archivosresidente.html')

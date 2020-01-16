@@ -1,4 +1,6 @@
-{% load static %}
+
+{% extends 'index.html' %}
+{% block content%}
 
 <title>Cargar de Archivos </title>
 
@@ -12,7 +14,7 @@
 </div>
 			<div > 
 				<hr width="500">
-				<H3>Acta de Nacimiento</H3> 
+				<H4>Acta de Nacimiento</H4> 
 				<hr width="500">
 				<input type="file" id="file" name="file" /> 
 				<input type="button" class="button" value="Subir Archivo"
@@ -27,7 +29,7 @@
 
 			<div > 
 				<hr width="500">
-				<H3>CURP</H3> 
+				<H4>CURP</H4> 
 				<hr width="500">
 				<input type="file" id="file" name="file" /> 
 				<input type="button" class="button" value="Subir Archivo"
@@ -43,7 +45,7 @@
 
 			<div >
 			    <hr width="500">
-				<H3> INE/IFE </H3> 
+				<H4> INE/IFE </H4> 
                 <hr width="500">
 				<input type="file" id="file" name="file" /> 
 				<input type="button" class="button" value="Subir Archivo"
@@ -58,7 +60,7 @@
 
 			<div > 
 				<hr width="500">
-				<H3> Comprobante de Domicilio </H3> 
+				<H4> Comprobante de Domicilio </H4> 
 				<hr width="500">
 				<input type="file" id="file" name="file" /> 
 				<input type="button" class="button" value="Subir Archivo"
@@ -72,7 +74,7 @@
 
 			<div > 
 				<hr width="500">
-				<H3> Comprobante de Estudios </H3> 
+				<H4> Comprobante de Estudios </H4> 
 				<hr width="500">
 				<input type="file" id="file" name="file" /> 
 				<input type="button" class="button" value="Subir Archivo"
@@ -86,7 +88,7 @@
 
 			<div > 
 				<hr width="500">
-				<H3> Carta de presentación </H3> 
+				<H4> Carta de presentación </H4> 
 				<hr width="500">
 				<input type="file" id="file" name="file" /> 
 				<input type="button" class="button" value="Subir Archivo"
@@ -101,7 +103,7 @@
 			<div >
 
 				<hr width="500">
-				<H3> Certificado Médico </H3> 
+				<H4> Certificado Médico </H4> 
 				<hr width="500">
 				<input type="file" id="file" name="file" /> 
 				<input type="button" class="button" value="Subir Archivo"
@@ -110,4 +112,4 @@
 		</form> 
 	</div>	
 
-
+{% endblock %}
