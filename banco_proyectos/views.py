@@ -30,3 +30,6 @@ def residentes(request):
 
 def archivosresidente(request):
 	return render(request, 'paginas/archivosresidente.html')
+
+def restablecercontraseña(request):
+	return render(request, 'paginas/restablecercontraseña.html')

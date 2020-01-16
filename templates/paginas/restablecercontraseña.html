@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Restablecer contraseña</title>
+
+ <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Restablecer contraseña</div>
+      <div class="card-body">
+        <div class="text-center mb-4">
+          <h4>¿Olvidó su contraseña?</h4>
+          <p>Ingresa tu correo electrónico con el que diste de alta tu cuenta, se te enviara un correo con las instrucciones para poder restablecer tu contraseña.</p>
+        </div>
+        <form>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="email" id="inputEmail" class="form-control" placeholder="Enter email address" required="required" autofocus="autofocus">
+              <label for="inputEmail">Ingresa tu correo</label>
+            </div>
+          </div>
+         <input class="btn btn-primary" type="submit" value="Restablecer contraseña">
+        </form>
+        <div class="text-center">
+          <a class="d-block small mt-3" href="registrar">Registrar una nueva cuenta</a>
+          <a class="d-block small" href="login">Iniciar sesión</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+</body>
+
+</html>

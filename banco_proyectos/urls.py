@@ -13,6 +13,7 @@ urlpatterns = [
     path('agendarcita', views.agendarcita, name='agendarcita'),
     path('residentes', views.residentes, name='residentes'),
     path('archivosresidente', views.archivosresidente, name= 'archivosresidente'),
+    path('restablecer-contraseña', views.restablecercontraseña, name= 'restablecer'),
 
 
 ]
