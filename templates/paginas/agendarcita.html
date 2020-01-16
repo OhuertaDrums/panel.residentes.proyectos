@@ -10,11 +10,9 @@
 {% block content%}
 <!--<p>Date: <input type="text" id="datepicker"></p>-->
 
-
-
 <div class="container">
   <div class="row">
-      <div class="col" id="datepicker"></div>
+      <div class="col" id="datepicker1"></div>
             <div class="col card" style="width: 18rem;">
               <div class="card-body">
                   <h3>Datos del residente</h3>
@@ -24,29 +22,18 @@
                       <input type="text" name="residente" disabled="disabled"></li>
                     <li class="list-group-item">
                       <label>Escuela</label>
-                      <input type="text" name="escuela"></li>
+                      <input type="text" id="escuela" name="escuela" value="escuela"></li>
                     <li class="list-group-item">
-                      <label>Fecha</label>
-                      <input type="text" name="fecha"></li>
-
-                      <form action="../. ./form-result.php" method="post" target="_blank">
-                        <p>
-                        Agendar cita: <input type="date" name="fechacita" list="listafechascita">
-                        <input type="submit" value="Confirmar cita">
-                        </p>
-                      </form>
-                      <datalist id="listafechascita">
-                      <option value="2015-05-05">
-                      <option value="2015-05-12">
-                      <option value="2015-05-19">
-                      <option value="2015-05-26">
-                      </datalist>
+                      <label>Agendar cita</label>
+                      <input type="text" id="datepicker" name="fecha"> </li>
                   </ul>
+                  <div>
+                      <input class="btn btn-primary" type="submit" value="Confirmar cita">
+                  </div>
             </div>
       </div>
    </div>
 </div>
-
 <div id="espacio">
   <p></p>
 </div>
