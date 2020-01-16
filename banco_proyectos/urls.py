@@ -10,7 +10,7 @@ urlpatterns = [
     path('registrar', views.registrar, name='registrar'),
     path('agendar', views.agendar, name='agendar'),
     path('residentes', views.residentes, name='residentes'),
-    path('archivosresidente', views.archivosresidente, name= 'archivosresidente'),
+    path('archivosr', views.archivosr, name= 'archivosr'),
     path('restablecer-contraseña', views.restablecercontraseña, name= 'restablecer'),
 
 
