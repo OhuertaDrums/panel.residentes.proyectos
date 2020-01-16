@@ -22,9 +22,9 @@ def registrar(request):
 	return render(request, 'paginas/registrar.html')
 
 
-def calendario(request):
-	return render(request, 'paginas/calendario.html')
+def agendarcita(request):
+	return render(request, 'paginas/agendarcita.html')
 
-def test(request):
-	return render(request, 'paginas/test.html')
+def residentes(request):
+	return render(request, 'paginas/residentes.html')
 

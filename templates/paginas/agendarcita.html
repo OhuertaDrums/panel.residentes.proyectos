@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+  calendario
+{% endblock %}
+
+
+
+{% block content%}
+<!--<p>Date: <input type="text" id="datepicker"></p>-->
+
+<div class="container">
+  <div class="row">
+      <div class="col" id="datepicker1"></div>
+            <div class="col card" style="width: 18rem;">
+              <div class="card-body">
+                  <h3>Datos del residente</h3>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <label>Residente</label>    
+                      <input type="text" name="residente" disabled="disabled"></li>
+                    <li class="list-group-item">
+                      <label>Escuela</label>
+                      <input type="text" id="escuela" name="escuela" value="escuela"></li>
+                    <li class="list-group-item">
+                      <label>Agendar cita</label>
+                      <input type="text" id="datepicker" name="fecha"> </li>
+                  </ul>
+                  <div>
+                      <input class="btn btn-primary" type="submit" value="Confirmar cita">
+                  </div>
+            </div>
+      </div>
+   </div>
+</div>
+<div id="espacio">
+  <p></p>
+</div>
+
+<div id="contenido">
+  <h4>Nota:<span>El horario para entrevistas es de 11 am a 2 pm de Lunes a Viernes,  por favor comunicate con nosotros para acordar tu horario de cita en el día seleccionado”.</span></h4>
+
+</div>
+{% endblock %}
