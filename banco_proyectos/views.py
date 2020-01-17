@@ -3,6 +3,9 @@ from django.http import HttpResponse
 
 
 
+def bienvenido(request):
+	return render(request, 'paginas/bienvenido.html')
+
 def vistaprincipal(request):
 	return render(request, 'paginas/vistaprincipal.html')
 
@@ -20,8 +23,11 @@ def agendar(request):
 def residentes(request):
 	return render(request, 'paginas/residentes.html')
 
-def archivosresidente(request):
-	return render(request, 'paginas/archivosresidente.html')
+def archivosr(request):
+	return render(request, 'paginas/archivosr.html')
 
 def restablecercontraseña(request):
 	return render(request, 'paginas/restablecercontraseña.html')
+
+def verproyectos(request):
+	return render(request, 'paginas/verproyectos.html')
