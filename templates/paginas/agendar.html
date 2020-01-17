@@ -2,33 +2,46 @@
 
 
 {% block title %}
-  calendario
+  Agendar cita
+
 {% endblock %}
 
-
+ {% block direcciones %}
+        <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="vistaprincipal">Inicio</a>
+    </li>
+    <li class="breadcrumb-item active">Agendar Cita</li>
+  </ol>
+{% endblock %}
 
 {% block content%}
 <!--<p>Date: <input type="text" id="datepicker"></p>-->
 
+
+
 <div class="container">
   <div class="row">
-      <div class="col" id="datepicker1"></div>
-            <div class="col card" style="width: 18rem;">
+      <!--div-->
+            <div class="col card" style="width: 22rem;">
               <div class="card-body">
                   <h3>Datos del residente</h3>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                       <label>Residente</label>    
-                      <input type="text" name="residente" disabled="disabled"></li>
+                      <input type="text" class="form-control" name="residente" disabled="disabled"></li>
                     <li class="list-group-item">
                       <label>Escuela</label>
-                      <input type="text" id="escuela" name="escuela" value="escuela"></li>
+                      <input type="text" class="form-control" id="escuela" name="escuela"  disabled="disabled"></li>
                     <li class="list-group-item">
-                      <label>Agendar cita</label>
-                      <input type="text" id="datepicker" name="fecha"> </li>
+                      <label>Fecha de la cita</label>
+                      <input type="text" class="form-control" id="datepicker" name="fecha"> </li>
                   </ul>
+                  <br>
+                  <br>
                   <div>
-                      <input class="btn btn-primary" type="submit" value="Confirmar cita">
+                      <input class="btn btn-primary btn-lg btn-block" type="submit" value="Confirmar cita" style="text-align: center;;">
                   </div>
             </div>
       </div>

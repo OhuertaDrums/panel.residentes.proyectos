@@ -3,6 +3,9 @@ from django.http import HttpResponse
 
 
 
+def bienvenido(request):
+	return render(request, 'paginas/bienvenido.html')
+
 def vistaprincipal(request):
 	return render(request, 'paginas/vistaprincipal.html')
 
@@ -25,3 +28,6 @@ def archivosr(request):
 
 def restablecercontraseña(request):
 	return render(request, 'paginas/restablecercontraseña.html')
+
+def verproyectos(request):
+	return render(request, 'paginas/verproyectos.html')
