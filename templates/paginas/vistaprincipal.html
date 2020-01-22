@@ -2,8 +2,20 @@
 {% extends 'index.html' %}
 
 
+{% block direcciones %}
+        <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="vistaprincipal">Inicio</a>
+    </li>
+    <li class="breadcrumb-item active">Vista Principal</li>
+  </ol>
+{% endblock %}
+
+
 {% block content %}
 
+<<<<<<< HEAD
 
   <h3>Nuestra Meta</h3> <br>
 
@@ -25,6 +37,9 @@
   <h6><span>Nos apasiona brindar un servicio robusto y eficiente que supere las expectativas de nuestros socios de negocio de acuerdo a sus necesidades, logrando relaciones duraderas y transmitiendo confianza gracias a la implementación de estándares internacionales que permitan mejorar nuestros procesos y poder llegar a inspirar a otros a hacer lo mismo.</span></h6>
 
 </div>
+=======
+<h3>{{ user.email }}</h3>
+>>>>>>> 786a72db73a2d00b102a33b4291228f75b8e4a22
 
 
 {% endblock %}

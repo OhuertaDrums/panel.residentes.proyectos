@@ -1,8 +1,7 @@
 {% extends 'index.html' %}
 
-
 {% block title %}
-  test
+    Banco de proyectos
 {% endblock %}
 
 {% block menu %}
@@ -27,11 +26,11 @@
           <a class="dropdown-item" href="forgot-password.html">¿olvidó sú contraseña?</a>
           <div class="dropdown-divider"></div> -->
           <h6 class="dropdown-header">Opciones: </h6>
-
-          <a class="dropdown-item" href="archivosr">Subir archivos</a>
-          <a class="dropdown-item" href="verproyectos">Ver proyectos</a> 
+          <a class="dropdown-item" href="agendar">Agendar Cita</a>
           <a class="dropdown-item" target="_blank" href="https://www.finkok.com//">FINKOK WebSite</a>
-          <!-- falta hacer vista de proyecto -->
+
+        <a class="dropdown-item" href="archivosr">Subir archivos</a>
+        <a class="dropdown-item" href="proyectosdisponibles">Ver proyectos</a> <!-- falta hacer vista de proyecto -->
 
 
        </li>
@@ -50,14 +49,8 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="vistaprincipal">Inicio</a>
+            <a href="residentes">Inicio</a>
           </li>
-          <li class="breadcrumb-item active">Vista General</li>
+          <li class="breadcrumb-item active">Ver Proyectos</li>
         </ol>
         {% endblock %}
-
-
-
-{% block content%}
-<p> Nueva pruebas </p>
-{% endblock %}
