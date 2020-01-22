@@ -14,6 +14,7 @@ urlpatterns = [
     path('archivosr', views.archivosr, name= 'archivosr'),
     path('restablecer-contraseña', views.restablecercontraseña, name= 'restablecer'),
     path('verproyectos', views.verproyectos, name= 'proyectos'),
+    path('agregar_usuario', views.agregar_usuario, name= 'agregar_usuario'),
 
 
 ]
