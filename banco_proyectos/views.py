@@ -25,32 +25,35 @@ def login(request):
 	}
 	
 	if request.user.is_authenticated:
-		return redirect(reverse('vistaprincipal'))
-	if request.method == 'POST':
-		username = request.POST.get('username')
-		password = request.POST.get('password')
-		try:
-			
-			user = authenticate(username=username, password=password)
-			if user is not None:
-				if user.is_active:
-					auth_login(request, user)
-					response.update(
-						message = 'Inicio de sesion correcto',
-						success = True,
-						path = 'vistaprincipal'
-					)
+	#	return redirect(reverse('vistaprincipal'))
+		if request.method == 'POST':
+			username = request.POST.get('username')
+			password = request.POST.get('password')
+			try:
+				
+				user = authenticate(username=username, password=password)
+				if user is not None:
+					if user.is_active:
+						auth_login(request, user)
+						response.update(
+							message = 'Inicio de sesion correcto',
+							success = True,
+							path = '/vistaprincipal/'
+
+						)
+						return redirect('/vistaprincipal')
+
+					else:
+						response.update(
+							message = 'Usuario inactivo'
+						)
 				else:
 					response.update(
-						message = 'Usuario inactivo'
+						message = 'Usuario y/o correo incorrecto'
 					)
-			else:
-				response.update(
-					message = 'Usuario y/o correo incorrecto'
-				)
-		except Exception as e:
-			print('Excepcion en la vista login => {}'.format(e.args))
-		return JsonResponse(response)
+			except Exception as e:
+				print('Excepcion en la vista login => {}'.format(e.args))
+			
 	return render(request, 'paginas/login.html')
 
 def registrar(request):
