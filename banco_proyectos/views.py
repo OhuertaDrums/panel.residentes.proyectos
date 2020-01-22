@@ -9,13 +9,15 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 
+@login_required(login_url='/login/')
 def bienvenido(request):
 	return render(request, 'paginas/bienvenido.html')
 
+@login_required(login_url='/login/')
 def vistaprincipal(request):
 	return render(request, 'paginas/vistaprincipal.html')
 
-#@login_required(login_url='login')
+@login_required(login_url='/login/')
 def login(request):
 
 	response = {
@@ -23,14 +25,24 @@ def login(request):
 		'success': False,
 		'path': ''
 	}
-	
+	 # Añadimos los datos recibidos al formulario
 	if request.user.is_authenticated:
+<<<<<<< HEAD
 	#	return redirect(reverse('vistaprincipal'))
 		if request.method == 'POST':
 			username = request.POST.get('username')
 			password = request.POST.get('password')
 			try:
 				
+=======
+		
+		if request.method == 'POST':
+		# Recuperamos las credenciales validadas
+			username = request.POST.get('username')
+			password = request.POST.get('password')
+			try:
+				# Verificamos las credenciales del usuario
+>>>>>>> 32a1e924f9082edec2b9109a7bdcc6a1adcf9611
 				user = authenticate(username=username, password=password)
 				if user is not None:
 					if user.is_active:
@@ -39,10 +51,15 @@ def login(request):
 							message = 'Inicio de sesion correcto',
 							success = True,
 							path = '/vistaprincipal/'
+<<<<<<< HEAD
 
 						)
 						return redirect('/vistaprincipal')
 
+=======
+						)
+						return redirect('/vistaprincipal')
+>>>>>>> 32a1e924f9082edec2b9109a7bdcc6a1adcf9611
 					else:
 						response.update(
 							message = 'Usuario inactivo'
@@ -53,7 +70,11 @@ def login(request):
 					)
 			except Exception as e:
 				print('Excepcion en la vista login => {}'.format(e.args))
+<<<<<<< HEAD
 			
+=======
+			#return JsonResponse(response)
+>>>>>>> 32a1e924f9082edec2b9109a7bdcc6a1adcf9611
 	return render(request, 'paginas/login.html')
 
 def registrar(request):
