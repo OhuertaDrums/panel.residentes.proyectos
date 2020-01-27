@@ -30,10 +30,10 @@
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                       <label>Residente</label>    
-                      <input type="text" class="form-control" name="residente" disabled="disabled"></li>
+                      <input type="text" class="form-control" name="residente" disabled="disabled" value="{{ escol.nombre }} {{ resident.first_name }} {{ resident.last_name }}"></li>
                     <li class="list-group-item">
                       <label>Escuela</label>
-                      <input type="text" class="form-control" id="escuela" name="escuela"  disabled="disabled"></li>
+                      <input type="text" class="form-control" id="escuela" name="escuela"  disabled="disabled" value="{{ escol.escuela }}"></li>
                     <li class="list-group-item">
                       <label>Fecha de la cita</label>
                       <input type="text" class="form-control" id="datepicker" name="fecha"> </li>
@@ -52,7 +52,8 @@
 </div>
 
 <div id="contenido">
-  <h4>Nota:<span>El horario para entrevistas es de 11 am a 2 pm de Lunes a Viernes,  por favor comunicate con nosotros para acordar tu horario de cita en el día seleccionado”.</span></h4>
+  <h4>Nota:  <span>El horario para entrevistas es de 11 am a 2 pm de Lunes a Viernes</span><br>
+  <span>por favor comunicate con nosotros para acordar tu horario de cita en el día seleccionado.</span></h4>
 
 </div>
 {% endblock %}

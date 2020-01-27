@@ -23,25 +23,38 @@
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Registrar cuenta</div>
       <div class="card-body">
-
+          <h5 style="color: 069;">Favor de registrar todos los datos que se le piden </h5>
         <form action="agregar_usuario" method="POST">
             {% csrf_token %}
+
           <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
+            <div class="form-label-group">
                 <div class="form-label-group">
                   <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" required="required" autofocus="autofocus">
                   <label for="nombre">Nombre</label>
                 </div>
               </div>
+          </div>
+
+
+          <div class="form-group">
+            <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Apellidos" required="required">
-                  <label for="apellidos">Apellidos</label>
+                  <input type="text" name="apaterno" id="apaterno" class="form-control" placeholder="Apellido Paterno" required="required" autofocus="autofocus">
+                  <label for="apaterno">Apellido Paterno</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" name="amaterno" id="amaterno" class="form-control" placeholder="Apellido Materno" required="required">
+                  <label for="amaterno">Apellido Materno</label>
                 </div>
               </div>
             </div>
           </div>
+
 
           <div class="form-group">
             <div class="form-row">

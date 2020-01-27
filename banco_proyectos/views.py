@@ -9,53 +9,51 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 
-@login_required(login_url='/login/')
+
 def bienvenido(request):
 	return render(request, 'paginas/bienvenido.html')
 
-@login_required(login_url='/login/')
+
 def vistaprincipal(request):
 	return render(request, 'paginas/vistaprincipal.html')
 
-@login_required(login_url='/login/')
 def login(request):
 
 	response = {
-		'message': '',
-		'success': False,
-		'path': ''
+	'message': '',
+	'success': False,
 	}
-	 # Añadimos los datos recibidos al formulario
-	if request.user.is_authenticated:
-		
-		if request.method == 'POST':
-		# Recuperamos las credenciales validadas
-			username = request.POST.get('username')
-			password = request.POST.get('password')
-			try:
-				# Verificamos las credenciales del usuario
-				user = authenticate(username=username, password=password)
-				if user is not None:
-					if user.is_active:
-						auth_login(request, user)
-						response.update(
-							message = 'Inicio de sesion correcto',
-							success = True,
-							path = '/vistaprincipal/'
-						)
+
+	if request.method == 'POST':
+		username = request.POST.get('username')
+		password = request.POST.get('password')
+		try:
+			user = authenticate(username=username, password=password)
+			if user is not None:
+				if user.is_active:
+					auth_login(request, user)
+					if request.user.is_authenticated:
 						return redirect('/vistaprincipal')
-					else:
 						response.update(
-							message = 'Usuario inactivo'
+							message = 'Inicio de sesion correcta',
+							success = True
 						)
 				else:
 					response.update(
-						message = 'Usuario y/o correo incorrecto'
+						message = 'Usuario inactivo'
 					)
-			except Exception as e:
-				print('Excepcion en la vista login => {}'.format(e.args))
-			#return JsonResponse(response)
+			else:
+				response.update(
+					message = 'correo y/o contraseña incorrecta'
+				)
+		except Exception as e:
+			print('Exception en la vista login => {}'.format(e.args))
+		return JsonResponse(response)
 	return render(request, 'paginas/login.html')
+
+def logout(request):
+	auth_logout(request)
+	return render(request, 'paginas/bienvenido.html')
 
 def registrar(request):
 
@@ -64,8 +62,21 @@ def registrar(request):
 	return render(request, 'paginas/registrar.html', context)
 
 
+
+#-----------Vista de agendar cita------------
 def agendar(request):
-	return render(request, 'paginas/agendar.html')
+	#Se realiza la consulta a la tabla residente en la base de datos.	
+	resident = User.objects.get(username = request.user.username)
+	escol = residente.objects.get(usuario_id = request.user.id)
+	#Se guarda el dato en el contexto que se enviara al template agendar
+	context = {
+	'escol': escol,
+	'resident': resident
+	}
+	return render(request, 'paginas/agendar.html', context)
+
+
+
 
 def residentes(request):
 	return render(request, 'paginas/residentes.html')
@@ -85,11 +96,10 @@ def agregar_usuario(request):
 
 	if formula.is_valid():
 
-		agregar = User(username = formula.cleaned_data['nombre'], 
-			email = formula.cleaned_data['correo'])
+		agregar = User(username = formula.cleaned_data['correo'], first_name = formula.cleaned_data['apaterno'], last_name = formula.cleaned_data['amaterno'])
 		agregar.set_password(formula.cleaned_data['password'])
 		agregar.save()
 
-		datos = residente(telefono = formula.cleaned_data['telefono'], escuela = formula.cleaned_data['escuela'])
+		datos = residente(telefono = formula.cleaned_data['telefono'], escuela = formula.cleaned_data['escuela'], nombre = formula.cleaned_data['nombre'] ,usuario = agregar)
 		datos.save()
 	return render(request, 'paginas/registrar.html')
