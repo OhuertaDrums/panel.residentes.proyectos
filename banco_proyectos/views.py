@@ -65,14 +65,24 @@ def registrar(request):
 
 #-----------Vista de agendar cita------------
 def agendar(request):
-	#Se realiza la consulta a la tabla residente en la base de datos.	
-	resident = User.objects.get(username = request.user.username)
-	escol = residente.objects.get(usuario_id = request.user.id)
-	#Se guarda el dato en el contexto que se enviara al template agendar
-	context = {
-	'escol': escol,
-	'resident': resident
-	}
+	#Se realiza la consulta a la tabla residente en la base de datos.
+	if request.method == 'POST':	
+		resident = User.objects.get(username = request.user.username)
+		escol = residente.objects.get(usuario_id = request.user.id)
+		#Se guarda el dato en el contexto que se enviara al template agendar
+		context = {
+		'escol': escol,
+		'resident': resident
+		}
+	else:
+		if request.method == 'GET':
+			resident = User.objects.get(username = request.user.username)
+			escol = residente.objects.get(usuario_id = request.user.id)
+			#Se guarda el dato en el contexto que se enviara al template agendar
+			context = {
+			'escol': escol,
+			'resident': resident
+			}
 	return render(request, 'paginas/agendar.html', context)
 
 
@@ -84,13 +94,20 @@ def residentes(request):
 def archivosr(request):
 	return render(request, 'paginas/archivosr.html')
 
+
+#-----------Vista de restablecer contraseña------------
 def restablecercontraseña(request):
+	
+
+
 	return render(request, 'paginas/restablecercontraseña.html')
 
+	
+#-----------Vista de ver proyectos------------
 def verproyectos(request):
 	return render(request, 'paginas/verproyectos.html')
 
-
+#-----------Vista de agregar usuario------------
 def agregar_usuario(request):
 	formula = RegistroForm(request.POST)
 

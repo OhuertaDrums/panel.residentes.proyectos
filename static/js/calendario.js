@@ -12,12 +12,36 @@
 
 $("#datepicker").datepicker({
    	onSelect: function(dato){
-		minDate: 0
-
-   		//alert(dato);
-   		$("#escuela").data(dato);
-   		console.log(dato);
-
    	}
 });
+
+
+$(document).on('ready', function(){
+	
+		var token = csrftoken;
+		var data = new FotmData();
+		data.append('csrfmiddlewaretoken', token);
+		data.append('esc', esc);
+		data.append('user', residente);
+		data.append('fecha', fecha);
+
+		$.ajax({
+			type: 'POST',
+			url: '/agendar/',
+			data: data,
+			dataType: 'json',
+			cache: false,
+			contentType: false,
+			processData: false,
+		}).done(function(al){
+			if(al.success){
+				alert('todo bien');
+			}else{
+				alert('ago salio mal');
+			}
+			
+		});
+		
+	});
+
 
