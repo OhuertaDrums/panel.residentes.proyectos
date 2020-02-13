@@ -27,22 +27,26 @@
             <div class="col card" style="width: 22rem;">
               <div class="card-body">
                   <h3>Datos del residente</h3>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
+
+                  <form type="GET" id="entrevista">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
                       <label>Residente</label>    
-                      <input type="text" class="form-control" name="residente" disabled="disabled"></li>
-                    <li class="list-group-item">
+                      <input type="text" id="resi" class="form-control" name="residente" disabled="disabled" value="{{ escol.nombre }} {{ resident.first_name }} {{ resident.last_name }}"></li>
+                      <li class="list-group-item">
                       <label>Escuela</label>
-                      <input type="text" class="form-control" id="escuela" name="escuela"  disabled="disabled"></li>
-                    <li class="list-group-item">
+                      <input type="text" id="esc" class="form-control" name="escuela" name="escuela"  disabled="disabled" value="{{ escol.escuela }}"></li>
+                      <li class="list-group-item">
                       <label>Fecha de la cita</label>
                       <input type="text" class="form-control" id="datepicker" name="fecha"> </li>
-                  </ul>
-                  <br>
-                  <br>
-                  <div>
-                      <input class="btn btn-primary btn-lg btn-block" type="submit" value="Confirmar cita" style="text-align: center;;">
-                  </div>
+                    </ul>
+                   <br>
+                   <br>
+                    <div>
+                      <input class="btn btn-primary btn-lg btn-block" type="submit" value="Confirmar cita" style="text-align: center;" id="btn-agendarcita">
+                    </div>
+                  </form>
+
             </div>
       </div>
    </div>
@@ -52,7 +56,12 @@
 </div>
 
 <div id="contenido">
-  <h4>Nota:<span>El horario para entrevistas es de 11 am a 2 pm de Lunes a Viernes,  por favor comunicate con nosotros para acordar tu horario de cita en el día seleccionado”.</span></h4>
+  <h4>Nota:  <span>El horario para entrevistas es de 11 am a 2 pm de Lunes a Viernes</span><br>
+  <span>por favor comunicate con nosotros para acordar tu horario de cita en el día seleccionado.</span></h4>
 
 </div>
 {% endblock %}
+
+<!--<script type="text/javascript">
+  var csrftoken = '{{ csrf_token }}';
+</script>-->

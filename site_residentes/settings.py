@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'banco_proyectos',
+    'banco_proyectos.apps.BancoProyectosConfig',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'site_residentes.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'site_residentes1',
+        'NAME': 'site_residente2',
         'USER': 'site_residentes',
         'PASSWORD': 'site123',
         'HOST': '127.0.0.1',

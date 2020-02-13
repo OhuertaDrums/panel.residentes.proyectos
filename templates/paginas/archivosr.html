@@ -1,15 +1,18 @@
 
 {% extends 'index.html' %}
+
+{% block title %}
+  Subir archivos | residente
+{% endblock %}
 {% block content%}
-
-
-<title>Cargar de Archivos </title>
-
+	<div align="center"> 
+		<span>Los siguientes archivos deben ser en formato PDF</span>
+	</div>
     <div align="center"> 
 		<form method="post" action="" enctype="multipart/form-data"
 				id="myform"> 
             <div class="row">
-</div>
+	</div>
 			<div > 
 				<hr width="500">
 				<H4>Acta de Nacimiento</H4> 
@@ -110,14 +113,18 @@
 		</form> 
 	</div>	
 
+	<div align="center"> 
+		<br>
+	</div>
+	
 {% endblock %}
 
 {% block menu %}
   <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="sidebar navbar-nav">
+ 	<ul class="sidebar navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="vistaprincipal">
+        <a class="nav-link" href="residentes">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Bienvenido</span>
         </a>
@@ -134,21 +141,21 @@
           <a class="dropdown-item" href="forgot-password.html">¿olvidó sú contraseña?</a>
           <div class="dropdown-divider"></div> -->
           <h6 class="dropdown-header">Opciones: </h6>
-          <a class="dropdown-item" href="agendar">Agendar Cita</a>
-          <a class="dropdown-item" target="_blank" href="https://www.finkok.com//">FINKOK WebSite</a>
 
-        <a class="dropdown-item" href="archivosr">Subir archivos</a>
-        <a class="dropdown-item" href="proyectosdisponibles">Ver proyectos</a> <!-- falta hacer vista de proyecto -->
-       
+          <a class="dropdown-item" href="archivosr">Subir archivos</a>
+          <a class="dropdown-item" href="verproyectos">Ver proyectos</a> 
+          <a class="dropdown-item" target="_blank" href="https://www.finkok.com//">FINKOK WebSite</a>
+          <!-- falta hacer vista de proyecto -->
+
+
        </li>
       <!--<li class="nav-item"> gráficas
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
       </li>-->
-   
+     
     </ul>
-
     <div id="content-wrapper">
 
       <div class="container-fluid">
