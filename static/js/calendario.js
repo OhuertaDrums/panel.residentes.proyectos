@@ -1,47 +1,30 @@
-
-//$("#datepicker").datepicker({
-//   	onSelect: function(){
-//  		var dato = $(this).datepicker('getDate');
-//   		console.log("La fecha actual es:" + dato);
-//   		//alert($("#datepicker").data("dato"));
-//   	}
-//});
-
-
-
-
+// aquí se manda llamar el calendario date picker y se le asignaron algunos valores 
 $("#datepicker").datepicker({
-   	onSelect: function(dato){
-   	}
+		changeMonth:true, 
+		changeYear:true,
+	   dateFormat: 'dd-mm-yy',
+	   firstDay: 1,
+	   monthNames: ['Enero', 'Febreo', 'Marzo',
+	   'Abril', 'Mayo', 'Junio',
+	   'Julio', 'Agosto', 'Septiembre',
+	   'Octubre', 'Noviembre', 'Diciembre'],
+	   dayNamesMin: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab']
 });
 
 
-$(document).on('ready', function(){
-	
-		var token = csrftoken;
-		var data = new FotmData();
-		data.append('csrfmiddlewaretoken', token);
-		data.append('esc', esc);
-		data.append('user', residente);
-		data.append('fecha', fecha);
 
-		$.ajax({
-			type: 'POST',
-			url: '/agendar/',
-			data: data,
-			dataType: 'json',
-			cache: false,
-			contentType: false,
-			processData: false,
-		}).done(function(al){
-			if(al.success){
-				alert('todo bien');
-			}else{
-				alert('ago salio mal');
-			}
-			
-		});
-		
+
+$(document).ready(function(e){
+	$('#btn-agendarcita').click(function(e){
+		var fechacita = document.getElementById('datepicker').value;
+		if (fechacita == ""){
+			e.preventDefault();
+			toastr.warning('Debes de seleccioanr la fecha de tu cita', 'Aviso')
+		}	
 	});
+});
 
 
+$(document).ready(function(e){
+
+});

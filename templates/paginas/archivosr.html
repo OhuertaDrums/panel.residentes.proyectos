@@ -1,15 +1,18 @@
 
 {% extends 'index.html' %}
+
+{% block title %}
+  Subir archivos | residente
+{% endblock %}
 {% block content%}
-
-
-<title>Cargar de Archivos </title>
-
+	<div align="center"> 
+		<span>Los siguientes archivos deben ser en formato PDF</span>
+	</div>
     <div align="center"> 
 		<form method="post" action="" enctype="multipart/form-data"
 				id="myform"> 
             <div class="row">
-</div>
+	</div>
 			<div > 
 				<hr width="500">
 				<H4>Acta de Nacimiento</H4> 
@@ -110,6 +113,10 @@
 		</form> 
 	</div>	
 
+	<div align="center"> 
+		<br>
+	</div>
+	
 {% endblock %}
 
 {% block menu %}

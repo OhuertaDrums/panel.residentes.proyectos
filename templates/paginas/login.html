@@ -11,8 +11,10 @@
   <meta name="author" content="">
 
   <title>Iniciar sesión</title>
-
-   <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+  
+  <link href="{% static 'css/toastr.css' %}" rel="stylesheet" type="text/css">
+   
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
 
 </head>
@@ -50,7 +52,7 @@
               </label>
             </div>
           </div>
-          <input class="btn btn-primary btn-lg btn-block" type="submit" value="Entrar">
+          <input id="btn-entrar" class="btn btn-primary btn-lg btn-block" type="submit" value="Entrar">
         </form>
 
         <br>
@@ -69,6 +71,19 @@
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" ></script>
+ <script>
+   //Aquí va la logica para el mensaje del Toastr
+   const alerta = document.querySelector('#btn-entrar');
+  
+   alerta.addEventListener('click', () => {
+    toastr["success"]("Correcto", "Inicio de sesión", {
+      "progressBar": true,
+    });
+
+   });
+  </script>
+
 </body>
 
 </html>
