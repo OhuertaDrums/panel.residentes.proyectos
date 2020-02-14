@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .form import RegistroForm
+from .forms import Imagenes
 from django.contrib.auth.models import User
-from banco_proyectos.models import Residente, DatosResidente
+from banco_proyectos.models import Residente, DatosResidente, Media
 from pdb import set_trace
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
@@ -33,7 +34,9 @@ def login(request):
 				if user.is_active:
 					auth_login(request, user)
 					if request.user.is_authenticated:
-						return redirect('/vistaprincipal')
+						#return redirect('/vistaprincipal')
+						return redirect('/residentes')
+						
 						response.update(
 							message = 'Inicio de sesion correcta',
 							success = True
@@ -131,13 +134,41 @@ def residentes(request):
 	return render(request, 'paginas/residentes.html')
 
 def archivosr(request):
+	if request.method == 'POST':
+		img = request.FILES.get('acta')
+		print(img)
+		#username = User.objects.get(username.id)
+		username = User(request.user.id)
+		try:
+			if img:
+				#verificate_media = Media.objects.get(user = username)
+				#model_media.pdf = img
+
+				model_media = Media.objects.create(
+					pdf=img,
+					user=username
+				)
+				model_media.save()
+				
+		except Exception as e:
+			print('Excepción en la vista archivosr => {}'. format(e.args))
+	elif request.method == 'GET':
+		img = request.FILES.get('acta')
+		print(img)
+		try:
+			if img:
+				model_media = Media.objects.get(user = User(username.id))
+				model_media.pdf = img
+				model_media.save()
+
+		except Exception as e:
+			print('Excepción en la vista archivosr => {}'. format(e.args))
 	return render(request, 'paginas/archivosr.html')
 
 
 #-----------Vista de restablecer contraseña------------
 def restablecercontraseña(request):
 	
-
 
 	return render(request, 'paginas/restablecercontraseña.html')
 

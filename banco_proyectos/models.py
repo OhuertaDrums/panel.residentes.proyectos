@@ -12,4 +12,7 @@ class DatosResidente(models.Model):
 	residente = models.CharField(max_length=50)
 	escuela = models.CharField(max_length=50)
 	fecha = models.CharField(max_length=25)
-	
+
+class Media(models.Model):
+	user = models.OneToOneField(User, on_delete = models.CASCADE)
+	pdf = models.ImageField(upload_to='media/')
