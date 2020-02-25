@@ -9,6 +9,7 @@ class Residente(models.Model):
 	nombre = models.CharField(max_length=50)
 
 class DatosResidente(models.Model):
+	usuario = models.OneToOneField(User, on_delete = models.CASCADE)
 	residente = models.CharField(max_length=50)
 	escuela = models.CharField(max_length=50)
 	fecha = models.CharField(max_length=25)
