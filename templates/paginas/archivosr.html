@@ -9,16 +9,15 @@
 		<span>Los siguientes archivos deben ser en formato PDF</span>
 	</div>
     <div align="center"> 
-		<form method="post" action="" enctype="multipart/form-data"
-				id="myform"> 
-            <div class="row">
-	</div>
+		<form method="post" action="archivosr" enctype="multipart/form-data"
+				id="myform">
+			{% csrf_token %} 
 			<div > 
 				<hr width="500">
 				<H4>Acta de Nacimiento</H4> 
 				<hr width="500">
-				<input type="file" id="file" name="file" /> 
-				<input type="button" class="button" value="Subir Archivo"
+				<input type="file" id="acta" name="acta"/> 
+				<input type="submit" class="button" value="Subir Archivo"
 						id="but_upload"> 
 			</div> 
 		</form> 

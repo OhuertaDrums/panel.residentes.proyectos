@@ -14,11 +14,10 @@
 {% block css %} 
 <link href="{% static 'css/toastr.css' %}" rel="stylesheet" type="text/css">
 <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
-
- <link href="{% static 'vendor/datatables/dataTables.bootstrap4.css' %}" rel="stylesheet">
-
 <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
 <link href="{% static 'css/estilos.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/datatables/bootstrap4.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/datatables/bootstrap4.min.css' %}" rel="stylesheet">
 
 
 <!-- INICIO Este codigo es para el datapiker(Calendario) -->
@@ -38,10 +37,11 @@
 <body id="page-top">
 
 {% block header %}
-
+<!--Agregar el logo en el titulo de la pagina-->
+<link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/es/img/favicon.ico?v=a8def514be8a">
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
     <div id="logo">
-    <img src="/static/Images/finkoklogo.png " align="text-center" width="45px", height="45px">
+    <img src="/static/Images/finkoklogo.png " style=' align:text-center; width: 45px; height:45px;'/>
   </div>
     <a class="navbar-brand mr-1" href="vistaprincipal">Banco de proyectos</a>
     <!-- con estas dos lineas aparecen las barras para contraer y expandir menú lateral.-->
@@ -50,14 +50,14 @@
     </button>
 
     <!-- Navbar Search -->
-   <! <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+   <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
       <div class="input-group">
        <!--  <input type="text" class="form-control" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon2">
         <div class="input-group-append">
           <button class="btn btn-primary" type="button">
             <i class="fas fa-search"></i> 
-          </button> botón  de Busqueda -->
-        </div>
+          </button> botón  de Busqueda 
+        </div>-->
       </div>
     </form>
       <h6 style="color: white;">{{ user.username }}</h6>
@@ -160,6 +160,9 @@
 
 
         {% block content %}
+
+
+        <!--
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
@@ -212,9 +215,8 @@
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
       </div>
-      <!-- /.container-fluid -->
       </div>
-      <!-- /.container-fluid -->
+        -->
       {% endblock %}
 
       <!-- Sticky Footer -->
@@ -222,8 +224,8 @@
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
 
-            <span> ©  2012 FINKOK. Todos los derechos reservados..     
-             <img src="/static/Images/iso-logo-new.png " align="text-center" width="75", height="75">     
+            <span> ©  2012 FINKOK. Todos los derechos reservados..    </span> 
+             <img src="/static/Images/iso-logo-new.png " style='align:text-center; width: 75px; height:75px;'>     
           </div>
         </div>
       </footer>
@@ -270,19 +272,23 @@
  <!-- Core plugin JavaScript-->
  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
- <!-- Page level plugin JavaScript-->
- <!--<sc ript src="vendor/chart.js/Chart.min.js"></script>-->
- <script src="{% static 'vendor/datatables/jquery.dataTables.js' %}"></script>
- <script src="{% static 'vendor/datatables/dataTables.bootstrap4.js' %}"></script>
+ <script>
+   var csrftoken = "{{  csrf_token  }}";
 
+ </script>
  <!-- Custom scripts for all pages-->
  <script src="{% static 'js/sb-admin.min.js' %}"></script>
- <script src="{% static 'js/demo/datatables-demo.js' %}"></script>
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <script src="{% static 'js/datatable/ajax.js' %}"></script>
+
  <script src="{% static 'js/calendario.js' %}"></script>
+
  <!--<script src="js/demo/chart-area-demo.js"></script>-->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" ></script>
+ <script src="{% static 'js/datatable/jquery3.js' %}"></script>
+ <script src="{% static 'js/datatable/querytable.min.js' %}"></script>
+ <script src="{% static 'js/datatable/bootstraptable.min.js' %}"></script>
 
  {% endblock %}
 

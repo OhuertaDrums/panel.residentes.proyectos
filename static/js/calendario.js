@@ -13,18 +13,15 @@ $("#datepicker").datepicker({
 
 
 
-
+//Aqui extraemos el valor que esta en el campo de fecha, si esta vacio le avisara al usuario
 $(document).ready(function(e){
 	$('#btn-agendarcita').click(function(e){
 		var fechacita = document.getElementById('datepicker').value;
 		if (fechacita == ""){
 			e.preventDefault();
-			toastr.warning('Debes de seleccioanr la fecha de tu cita', 'Aviso')
+			alert('Debes de seleccioanr la fecha de tu cita', 'Aviso')
 		}	
 	});
 });
 
 
-$(document).ready(function(e){
-
-});
