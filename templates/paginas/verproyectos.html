@@ -9,7 +9,7 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="vistaprincipal">
+        <a class="nav-link" href="residentes">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Bienvenido</span>
         </a>
@@ -26,11 +26,11 @@
           <a class="dropdown-item" href="forgot-password.html">¿olvidó sú contraseña?</a>
           <div class="dropdown-divider"></div> -->
           <h6 class="dropdown-header">Opciones: </h6>
-          <a class="dropdown-item" href="agendar">Agendar Cita</a>
-          <a class="dropdown-item" target="_blank" href="https://www.finkok.com//">FINKOK WebSite</a>
 
-        <a class="dropdown-item" href="archivosr">Subir archivos</a>
-        <a class="dropdown-item" href="proyectosdisponibles">Ver proyectos</a> <!-- falta hacer vista de proyecto -->
+          <a class="dropdown-item" href="archivosr">Subir archivos</a>
+          <a class="dropdown-item" href="verproyectos">Ver proyectos</a> 
+          <a class="dropdown-item" target="_blank" href="https://www.finkok.com//">FINKOK WebSite</a>
+          <!-- falta hacer vista de proyecto -->
 
 
        </li>
@@ -53,4 +53,33 @@
           </li>
           <li class="breadcrumb-item active">Ver Proyectos</li>
         </ol>
+        {% endblock %}
+
+        {% block content %}
+        <!--Codigo de la tabla que mostrara los proyectos-->
+        <span> <i class="fas fa-fw fa-briefcase"></i> <strong>Proyectos Disponibles</strong></span>
+        <br>
+        <br>
+       
+        <table id="_proyectos" class="table table-striped table-bordered" cellspacing="0" style="width:100%">
+          <thead>
+              <tr>
+                <th>id</th>
+                  <th>Nombre del proyecto</th>
+                  <th>Área</th>
+                  <th>Fecha Inicio</th>
+                  
+              </tr>
+          </thead>
+        <!--
+          <tfoot>
+              <tr>
+                <th>Nombre del proyecto</th>
+                <th>Aŕea</th>
+                <th>Disponible</th>
+                <th>Fecha Inicio</th>
+                <th>Comentarios</th>
+              </tr>
+          </tfoot>-->
+      </table>
         {% endblock %}

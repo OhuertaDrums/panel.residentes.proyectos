@@ -28,7 +28,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
  
 INSTALLED_APPS = [
@@ -58,8 +58,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
 
         'DIRS': [os.path.join (BASE_DIR, 'templates') ],
-
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,7 +79,7 @@ WSGI_APPLICATION = 'site_residentes.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'site_residentes1',
+        'NAME': 'site_residente2',
         'USER': 'site_residentes',
         'PASSWORD': 'site123',
         'HOST': '127.0.0.1',
@@ -133,7 +131,4 @@ STATICFILES_DIRS = [
 
    os.path.join (BASE_DIR, 'static')
 ]
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-    ]
+ 
