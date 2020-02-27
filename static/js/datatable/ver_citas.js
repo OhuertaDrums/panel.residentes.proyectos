@@ -1,7 +1,7 @@
 //token de django
 var token = csrftoken;
-//a donde va mandar la peticion en este caso /agendar
-var url_page = '/verproyectos'
+//URL a donde va mandar la peticion en este caso /ver-citas
+var url_page = '/ver-citas'
 //Idioma
 var idioma = {
   "sProcessing":     "Procesando...",
@@ -30,10 +30,6 @@ var idioma = {
 $(document).ready(function(){
   // Estableces las dimenciones de las columnas
   var columna_de_la_tabla = [{
-    sWidth: '25%',
-    'className': 'text-center',
-      bSortable: false,
-    },{
       sWidth: '25%',
       'className': 'text-center',
       bSortable: false,
@@ -47,7 +43,7 @@ $(document).ready(function(){
       bSortable: false,
     }];
   // Estableces los parametros a la datatable
-  var datos_residente = $('#_proyectos').DataTable({
+  var datos_residente = $('#_citas').DataTable({
     //propiedades de la tabla esto pede variar de acuerdo de como lo quieres.
     "sDom": 'l<"toolbar">frtip',
     'responsive': true,
@@ -56,14 +52,14 @@ $(document).ready(function(){
     'columns': columna_de_la_tabla,
     'columnDefs': [
       {
-        "targets": [0,1,2,3],
+        "targets": [0,1,2],
       },
     ],
     'language': idioma,
     'stateSave': true,
     'searching': false,
     sAjaxSource: url_page, //url de la pagina para pa peticion ajax
-    'fnServerData': function(sSource, aoData, fnCallback){
+    'fnServerData': function(ver_citas, aoData, fnCallback){
       // EL toquen de la seccion
       aoData.push({
         'name': 'csrfmiddlewaretoken',
@@ -78,7 +74,7 @@ $(document).ready(function(){
       $.ajax({
         'dataType': 'json',
         'type': 'POST',
-        'url': sSource,
+        'url': ver_citas,
         'data': aoData, 
         'success': function(respuesta){
           //aqui es donde llenas la tabla con el diccionario que regresas con el JsonResponse() en la vista

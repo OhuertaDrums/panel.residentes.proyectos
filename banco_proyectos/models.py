@@ -14,6 +14,23 @@ class DatosResidente(models.Model):
 	escuela = models.CharField(max_length=50)
 	fecha = models.CharField(max_length=25)
 
-class Media(models.Model):
+class Archivos_residentes(models.Model):
 	user = models.OneToOneField(User, on_delete = models.CASCADE)
-	pdf = models.ImageField(upload_to='media/')
+	acta_nacimiento = models.ImageField(upload_to='Actas_Nacimiento/')
+	curp = models.ImageField(upload_to='Curp/')
+	Ine = models.ImageField(upload_to='Ine/Ife/')
+	domicilio = models.ImageField(upload_to='Comporbante_Domicilio/')
+	comprobante_estudio = models.ImageField(upload_to='Comprobante_Estudios/')
+	carta_presentación = models.ImageField(upload_to='Carta_Presentación/')
+	certificado_medico = models.ImageField(upload_to='Certificado_Medico/')
+
+class Administradores(models.Model):
+	user = models.OneToOneField(User, on_delete = models.CASCADE)
+	nombre = models.CharField(max_length=80)
+	area = models.CharField(max_length=80)
+	cantidad = models.CharField(max_length=80)
+	proyecto = models.ImageField(upload_to='proyectos/')
+
+
+
+

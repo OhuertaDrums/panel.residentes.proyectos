@@ -1,0 +1,91 @@
+{% extends 'index.html' %}
+
+
+{% block menu %}
+  <div id="wrapper">
+    <!-- Sidebar -->
+ 	<ul class="sidebar navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="panel-administrativo">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Bienvenido</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Menú Principal </span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+        <!--  <h6 class="dropdown-header">Entrar:</h6> Menú login parte derecha de panel
+          <a class="dropdown-item" href="login.html">Iniciar Sesión</a>
+          <a class="dropdown-item" href="register.html">Registrarse</a>
+          <a class="dropdown-item" href="forgot-password.html">¿olvidó sú contraseña?</a>
+          <div class="dropdown-divider"></div> -->
+          <h6 class="dropdown-header">Opciones: </h6>
+
+          <a class="dropdown-item" href="ver-citas">Ver citas agendadas</a>
+          <hr>
+          <a class="dropdown-item" href="subir-proyectos">Subir proyectos</a> 
+          <hr>
+          <a class="dropdown-item" href="consultar-proyectos-seleccionados">Consultar proyectos<br>seleccionados</a> 
+          <hr>
+          <a class="dropdown-item" href="residentes-registrados">Ver residentes<br>registrados</a> 
+          <hr>
+          <a class="dropdown-item" href="documentos-residentes">Ver documentos<br>del residente</a> 
+          <!-- falta hacer vista de proyecto -->
+
+
+       </li>
+      <!--<li class="nav-item"> gráficas
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Charts</span></a>
+      </li>-->
+     
+    </ul>
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="panel-administrativo">Inicio</a>
+          </li>
+          <li class="breadcrumb-item active">Residentes Regitrados</li>
+        </ol>
+{% endblock %}
+
+{% block content %}
+
+<!--Codigo de la tabla que mostrara los proyectos-->
+<span> <i class="fas fa-fw fa-user"></i> <strong>residentes registrados</strong></span>
+<br>
+<br>
+
+<table id="_residentes" class="table table-striped table-bordered" cellspacing="0" style="width:100%">
+  <thead>
+      <tr>
+          <th>Nombre </th>
+          <th>Apellido Paterno</th>
+          <th>Apellido Materno</th>
+          <th>Escuela</th>
+          <th>Telefono</th>
+          <th>Correo Electrónico</th>
+                  
+      </tr>
+  </thead>
+<!--
+  <tfoot>
+      <tr>
+        <th>Nombre del proyecto</th>
+        <th>Aŕea</th>
+        <th>Disponible</th>
+        <th>Fecha Inicio</th>
+        <th>Comentarios</th>
+      </tr>
+  </tfoot>-->
+</table>
+
+{% endblock %}

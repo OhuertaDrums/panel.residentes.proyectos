@@ -5,116 +5,82 @@
   Subir archivos | residente
 {% endblock %}
 {% block content%}
-	<div align="center"> 
+<div class="card text-white bg-info mb-3" style="max-width: 110rem;">
+	<div class="card-body">
+	  <blockquote class="blockquote mb-0">
 		<span>Los siguientes archivos deben ser en formato PDF</span>
+	  </blockquote>
 	</div>
-    <div align="center"> 
-		<form method="post" action="archivosr" enctype="multipart/form-data"
-				id="myform">
-			{% csrf_token %} 
-			<div > 
-				<hr width="500">
-				<H4>Acta de Nacimiento</H4> 
-				<hr width="500">
-				<input type="file" id="acta" name="acta"/> 
-				<input type="submit" class="button" value="Subir Archivo"
-						id="but_upload"> 
-			</div> 
-		</form> 
-	</div>	
+  </div>
+<hr>
+<div class="card" >
+	<div class="card-header">
+	  Subir Archivos
+	</div>
+	<div class="card-body">
+	 
+	<form method="POST" action="archivosr" enctype="multipart/form-data" id="myform">
+		{% csrf_token %} 
+		<div > 
+			<label for="acta">Acta de Nacimiento</label>
+			<br> 
+			<input type="file" class="form-control" id="acta" name="acta"/>
+		</div> 
+		<hr>
+		<div>
+			<label for="acta">CURP</label>
+			<br> 
+			<input type="file" class="form-control" id="curp" name="curp"/> 
+		</div>
+		<hr>
+		<div>
+			<label for="ine">INE/IFE</label>
+			<br> 
+			<input type="file" class="form-control"  id="ine" name="ine"/> 
+		</div>
+		<hr>
 
-	<div align="center"> 
-		<form method="post" action="" enctype="multipart/form-data"
-				id="myform"> 
+		<div>
+			<label for="com_domicilio">Comprobante de Domicilio</label>
+			<br> 
+			<input type="file" class="form-control" id="com_domicilio" name="com_domicilio" /> 
+		</div>
+		<hr>
 
-			<div > 
-				<hr width="500">
-				<H4>CURP</H4> 
-				<hr width="500">
-				<input type="file" id="file" name="file" /> 
-				<input type="button" class="button" value="Subir Archivo"
-						id="but_upload"> 
-			</div> 
-		</form> 
-	</div>	
+		<div>
+			<label for="comp_estudios">Comprobante de Estudios</label>
+			<br> 
+			<input type="file" class="form-control" id="comp_estudios" name="comp_estudios" /> 
+		</div>
 
+		<hr>
+		<div>
+			<label for="carta_present">Comprobante de presentación</label>
+			<br> 
+			<input type="file" class="form-control" id="carta_present" name="carta_present" /> 
+		</div>
+
+		<hr>
+		<div>
+			<label for="cert_medico">Certificado Medico</label>
+			<br> 
+			<input type="file" class="form-control" id="cert_medico" name="cert_medico" /> 
+		</div>
+		<hr>
+		<div align="center"> 
+		<input type="submit" class="btn btn-primary" value="Subir Archivo" id="but_upload"> 
+		</div>
+
+	</form> 
+
+	</div>
+	<div class="card-footer text-muted">
+	 
+	</div>
+  </div>
+  
 	
-	<div align="center"> 
-		<form method="post" action="" enctype="multipart/form-data"
-				id="myform"> 
-
-			<div >
-			    <hr width="500">
-				<H4> INE/IFE </H4> 
-                <hr width="500">
-				<input type="file" id="file" name="file" /> 
-				<input type="button" class="button" value="Subir Archivo"
-						id="but_upload"> 
-			</div> 
-		</form> 
-	</div>	
-
-   <div align="center"> 
-		<form method="post" action="" enctype="multipart/form-data"
-				id="myform"> 
-
-			<div > 
-				<hr width="500">
-				<H4> Comprobante de Domicilio </H4> 
-				<hr width="500">
-				<input type="file" id="file" name="file" /> 
-				<input type="button" class="button" value="Subir Archivo"
-						id="but_upload"> 
-			</div> 
-		</form> 
-	</div>	
-	<div align="center"> 
-		<form method="post" action="" enctype="multipart/form-data"
-				id="myform"> 
-
-			<div > 
-				<hr width="500">
-				<H4> Comprobante de Estudios </H4> 
-				<hr width="500">
-				<input type="file" id="file" name="file" /> 
-				<input type="button" class="button" value="Subir Archivo"
-						id="but_upload"> 
-			</div> 
-		</form> 
-	</div>	
-	<div align="center"> 
-		<form method="post" action="" enctype="multipart/form-data"
-				id="myform"> 
-
-			<div > 
-				<hr width="500">
-				<H4> Carta de presentación </H4> 
-				<hr width="500">
-				<input type="file" id="file" name="file" /> 
-				<input type="button" class="button" value="Subir Archivo"
-						id="but_upload"> 
-			</div> 
-		</form> 
-	</div>	
-	<div align="center"> 
-		<form method="post" action="" enctype="multipart/form-data"
-				id="myform"> 
-
-			<div >
-
-				<hr width="500">
-				<H4> Certificado Médico </H4> 
-				<hr width="500">
-				<input type="file" id="file" name="file" /> 
-				<input type="button" class="button" value="Subir Archivo"
-						id="but_upload"> 
-			</div> 
-		</form> 
-	</div>	
-
-	<div align="center"> 
-		<br>
-	</div>
+	
 	
 {% endblock %}
 
@@ -166,4 +132,4 @@
           </li>
           <li class="breadcrumb-item active">Subir Archivos</li>
         </ol>
-        {% endblock %}
+{% endblock %}

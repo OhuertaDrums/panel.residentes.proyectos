@@ -17,6 +17,15 @@ urlpatterns = [
     path('restablecer-contraseña', views.restablecercontraseña, name= 'restablecer'),
     path('verproyectos', views.verproyectos, name= 'proyectos'),
     path('agregar_usuario', views.agregar_usuario, name= 'agregar_usuario'),
+    #Urls para la seccioón de los administradores
+    path('subir-proyectos', views.subir_proyectos, name= 'subir_proyectos'),
+    path('panel-administrativo', views.panel_administradores, name= 'panel_administradores'),
+    path('ver-citas', views.ver_citas, name= 'ver_citas'),
+    path('consultar-proyectos-seleccionados', views.consultar_proyectos, name= 'consultar_proyectos'),
+    path('residentes-registrados', views.ver_residentes, name= 'ver_residentes'),
+    path('documentos-residentes', views.documentos_residentes, name= 'documentos_residentes'),
+
+    
 
 
 ]
