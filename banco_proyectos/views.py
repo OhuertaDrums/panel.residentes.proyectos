@@ -13,101 +13,61 @@ from pdb import set_trace
 from django.template.loader import render_to_string
 
 
-<<<<<<< HEAD
-=======
+
 def bienvenido(request):
 	return render(request, 'paginas/bienvenido.html')
 
 
 def vistaprincipal(request):
 	return render(request, 'paginas/vistaprincipal.html')
->>>>>>> 29c48f1e29fe9149e361d2950508e5b4b036ef07
+
 
 def login(request):
 
-	response = {
-	'message': '',
-	'success': False,
-	}
-<<<<<<< HEAD
-	 # Añadimos los datos recibidos al formulario
-	if request.user.is_authenticated:
+   	response = {
+     'message': '',
+     'success': False,
+    }
 
-		
-		if request.method == 'POST':
-		# Recuperamos las credenciales validadas
-			username = request.POST.get('username')
-			password = request.POST.get('password')
-			try:
-				# Verificamos las credenciales del usuario
-
-				user = authenticate(username=username, password=password)
-				if user is not None:
-					if user.is_active:
-						auth_login(request, user)
-						response.update(
-							message = 'Inicio de sesion correcto',
-							success = True,
-							path = '/vistaprincipal/'
-
-
-						)
-						return redirect('/vistaprincipal')
-
-
-					
-						return redirect('/vistaprincipal')
-
-					else:
-=======
-
-	if request.method == 'POST':
-		username = request.POST.get('username')
-		password = request.POST.get('password')
-		try:
-			user = authenticate(username=username, password=password)
-			if user is not None:
-				if user.is_active:
-					auth_login(request, user)
-					if request.user.is_authenticated:
-						#return redirect('/vistaprincipal')
-						return redirect('/residentes')
-						
->>>>>>> 29c48f1e29fe9149e361d2950508e5b4b036ef07
-						response.update(
-							message = 'Inicio de sesion correcta',
-							success = True
-						)
-				else:
-					response.update(
-						message = 'Usuario inactivo'
-					)
-			else:
-				if user != True:
-					return redirect('/login')
-					response.update(
-						message = 'correo y/o contraseña incorrecta'
-					)
-<<<<<<< HEAD
-			except Exception as e:
-				print('Excepcion en la vista login => {}'.format(e.args))
-
-=======
-		except Exception as e:
-			print('Exception en la vista login => {}'.format(e.args))
-		return JsonResponse(response)
->>>>>>> 29c48f1e29fe9149e361d2950508e5b4b036ef07
-	return render(request, 'paginas/login.html')
-
+     if request.method == 'POST':
+	    username = request.POST.get('username')
+	    password = request.POST.get('password')
+	    try:
+	        user = authenticate(username=username, password=password)
+	        if user is not None:
+	            if user.is_active:
+	            auth_login(request, user)
+	             if request.user.is_authenticated:
+	                        #return redirect('/vistaprincipal')
+	                return redirect('/residentes')
+	                        
+	                response.update(
+	                message = 'Inicio de sesion correcta',
+	                            success = True
+	                        )
+	                else:
+	                    response.update(
+	                        message = 'Usuario inactivo'
+	                    )
+	            else:
+	                if user != True:
+	                    return redirect('/login')
+	                    response.update(
+	                        message = 'correo y/o contraseña incorrecta'
+	                    )
+	        except Exception as e:
+	            print('Exception en la vista login => {}'.format(e.args))
+	        return JsonResponse(response)
+     return render(request, 'paginas/login.html')
 def logout(request):
 	auth_logout(request)
 	return render(request, 'paginas/logout.html')
 
 def registrar(request):
 
-	context = {'form': RegistroForm}
+	 context = {'form': RegistroForm}
 
-	return render(request, 'paginas/registrar.html', context)
+	 return render(request, 'paginas/registrar.html', context)
 
 
 
